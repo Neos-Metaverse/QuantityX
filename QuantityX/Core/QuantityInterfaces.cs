@@ -1,0 +1,51 @@
+﻿/* *****************************************************************************
+ * Author: Tomas "Frooxius" Mariancik (www.frooxius.com)
+ * Date: 09/19/2014
+ * 
+ * Summary: Interfaces for all the quantity types
+ * *****************************************************************************/
+
+using System;
+using System.Collections.Generic;
+
+using System.Text;
+
+
+namespace QuantityX
+{
+    public interface IQuantity
+    {
+        double BaseValue { get; }
+
+        string[] GetShortBaseNames();
+        string[] GetLongBaseNames();
+    }
+
+    public interface IQuantity<T> : IQuantity, IComparable<T>, IEquatable<T>
+        where T : IQuantity<T>
+    {
+        T New(double baseValue);
+
+        T Add(T q);
+        T Subtract(T q);
+
+        T Multiply(double n);
+
+        T Divide(double n);
+        Ratio Divide(T q);
+
+        Unit<T> DefaultUnit { get; }
+    }
+
+    public interface IQuantitySI
+    {
+        double SIPower { get; }
+        IUnit[] GetCommonSIUnits();
+        IUnit[] GetExludedSIUnits();
+    }
+
+    public interface IQuantitySI<T> : IQuantitySI, IQuantity<T> where T : IQuantity<T>
+    {
+        
+    }
+}
