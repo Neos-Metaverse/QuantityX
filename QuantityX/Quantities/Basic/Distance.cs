@@ -83,6 +83,10 @@ namespace QuantityX
             new UnitGroup[] { UnitGroup.Astronomical, UnitGroup.Common },
             new string[] { " ly" }, new string[] { " lightyears", " lightyear" });
 
+        public static readonly Unit<Distance> Parsec = new Unit<Distance>(3.0857e16,
+            new UnitGroup[] { UnitGroup.Astronomical, UnitGroup.Common },
+            new string[] { " pc" }, new string[] { " parsecs", " persec" });
+
         // Imperial
         public static readonly Unit<Distance> Thou = new Unit<Distance>(0.0000254,
             new UnitGroup[] { UnitGroup.Imperial },

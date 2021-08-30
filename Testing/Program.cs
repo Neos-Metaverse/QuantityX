@@ -15,9 +15,8 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            var t = Time.TryParse("-12,5 minutes", out Time time, Time.Day);
-
-            Console.WriteLine(time.FormatCompound(Time.DayHourMinute_Long));
+            var d = Distance.Parse("1.3 pc");
+            Console.WriteLine(d.ConvertTo(Distance.Lightyear));
 
             //Console.WriteLine(pos.FormatAuto());
             //Console.WriteLine(pos.FormatAs(Distance.Meter));
