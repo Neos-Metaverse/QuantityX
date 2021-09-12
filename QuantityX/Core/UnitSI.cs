@@ -7,8 +7,7 @@
 
 using System;
 using System.Collections.Generic;
-
-using System;
+using System.Linq;
 
 namespace QuantityX
 {
@@ -22,6 +21,16 @@ namespace QuantityX
                 new UnitGroup[] { UnitGroup.Metric },
                 new string[] { " " + shortPrefix + "{0}" },
                 new string[] { " " + longPrefix +  "{0}" })
+        {
+            if (nFactor % 3 == 0)
+                UnitGroup.MetricThousands.RegisterUnit(this);
+        }
+
+        public UnitSI(int nFactor, string[] shortPrefixes, string[] longPrefixes) :
+            base(Math.Pow(Math.Pow(10, nFactor), SIPower),
+                new UnitGroup[] { UnitGroup.Metric },
+                shortPrefixes.Select(p => " " + p + "{0}").ToArray(),
+                longPrefixes.Select(p => " " + p + "{0}").ToArray())
         {
             if (nFactor % 3 == 0)
                 UnitGroup.MetricThousands.RegisterUnit(this);

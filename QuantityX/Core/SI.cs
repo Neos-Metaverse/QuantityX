@@ -15,7 +15,7 @@ namespace QuantityX
         public static readonly UnitSI<T> Femto = new UnitSI<T>(-15, "f", "femto");
         public static readonly UnitSI<T> Pico = new UnitSI<T>(-12, "p", "pico");
         public static readonly UnitSI<T> Nano = new UnitSI<T>(-9, "n", "nano");
-        public static readonly UnitSI<T> Micro = new UnitSI<T>(-6, "µ", "micro");
+        public static readonly UnitSI<T> Micro = new UnitSI<T>(-6, new[] { "µ", "μ", "u" }, new[] { "micro" });
         public static readonly UnitSI<T> Milli = new UnitSI<T>(-3, "m", "milli");
 
         public static readonly UnitSI<T> Centi = new UnitSI<T>(-2, "c", "centi");
