@@ -49,6 +49,9 @@ namespace QuantityX
                 SI<Distance>.Milli,
                 SI<Distance>.Micro,
                 SI<Distance>.Nano,
+                SI<Distance>.Pico,
+                SI<Distance>.Femto,
+                SI<Distance>.Atto,
             };
         }
 
