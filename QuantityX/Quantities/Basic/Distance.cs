@@ -72,7 +72,7 @@ namespace QuantityX
 
         // Scientific
         public static readonly Unit<Distance> Angstrom = new Unit<Distance>(1e-10,
-            new UnitGroup[] { UnitGroup.Molecular , UnitGroup.Common },
+            new UnitGroup[] { UnitGroup.Molecular },
             new string[] { " Å" }, new string[] { " ångströms", " ångström" });
 
         public static readonly Unit<Distance> AU = new Unit<Distance>(149597871464,

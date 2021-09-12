@@ -15,7 +15,7 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            var d = Distance.Parse("1.3 pc");
+            var d = new Distance(0.0000000000001f);
             Console.WriteLine(d.ToString());
 
             //Console.WriteLine(pos.FormatAuto());
