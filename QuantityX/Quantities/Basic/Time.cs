@@ -168,5 +168,7 @@ namespace QuantityX
         #endregion
 
         /* *********************************************** */
+
+        public override string ToString() => this.FormatAuto();
     }
 }

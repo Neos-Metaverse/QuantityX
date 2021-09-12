@@ -84,7 +84,7 @@ namespace QuantityX
             new string[] { " ly" }, new string[] { " lightyears", " lightyear" });
 
         public static readonly Unit<Distance> Parsec = new Unit<Distance>(3.0857e16,
-            new UnitGroup[] { UnitGroup.Astronomical, UnitGroup.Common },
+            new UnitGroup[] { UnitGroup.Astronomical },
             new string[] { " pc" }, new string[] { " parsecs", " persec" });
 
         // Imperial
@@ -159,5 +159,7 @@ namespace QuantityX
         #endregion
 
         /* *********************************************** */
+
+        public override string ToString() => this.FormatAuto();
     }
 }

@@ -16,7 +16,7 @@ namespace Testing
         static void Main(string[] args)
         {
             var d = Distance.Parse("1.3 pc");
-            Console.WriteLine(d.ConvertTo(Distance.Lightyear));
+            Console.WriteLine(d.ToString());
 
             //Console.WriteLine(pos.FormatAuto());
             //Console.WriteLine(pos.FormatAs(Distance.Meter));
