@@ -115,6 +115,12 @@ namespace QuantityX
         static bool ParseIntern(string str, NumberStyles numberStyles, IFormatProvider formatProvider, out T quantity,
             Unit<T> defaultUnit, bool throwOnFail)
         {
+            if (string.IsNullOrWhiteSpace(str))
+            {
+                quantity = default;
+                return false;
+            }
+
             // separate unit and number
             int splitIndex = IndexOfNumberEnd(str);
 
@@ -203,6 +209,9 @@ namespace QuantityX
 
         static int IndexOfNumberEnd(string str)
         {
+            if (string.IsNullOrWhiteSpace(str))
+                return -1;
+
             bool startedNumber = false;
 
             for(int i = 0; i < str.Length; i++)
