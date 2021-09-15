@@ -33,8 +33,11 @@ namespace QuantityX
 
         public static readonly UnitGroup Astronomical = new UnitGroup();
         public static readonly UnitGroup Molecular = new UnitGroup();
+        public static readonly UnitGroup Meteorological = new UnitGroup();
+        public static readonly UnitGroup Aviation = new UnitGroup();
+        public static readonly UnitGroup Maritime = new UnitGroup();
 
-        public static readonly UnitGroup Imperial = new UnitGroup();    // dumb
+        public static readonly UnitGroup Imperial = new UnitGroup();
 
         #endregion
 

@@ -54,6 +54,18 @@ namespace QuantityX
             new UnitGroup[] { UnitGroup.Common, UnitGroup.Metric },
             new string[] { " km/h", " kmh" }, new string[] { " kilometers per hour" });
 
+        public static readonly Unit<Velocity> MilesPerHour = new Unit<Velocity>(0.44704,
+            new UnitGroup[] { UnitGroup.Imperial },
+            new string[] { " mph" }, new string[] { " miles per hour" });
+
+        public static readonly Unit<Velocity> FeetPerSecond = new Unit<Velocity>(0.3048,
+            new UnitGroup[] { UnitGroup.Imperial },
+            new string[] { " ft/s" }, new string[] { " feet per second" });
+
+        public static readonly Unit<Velocity> Knots = new Unit<Velocity>(0.514444,
+            new UnitGroup[] { UnitGroup.Meteorological, UnitGroup.Aviation, UnitGroup.Maritime },
+            new string[] { " kn", " kt" }, new string[] { " knots", " knot" });
+
         #endregion
 
         /* *********************************************** */

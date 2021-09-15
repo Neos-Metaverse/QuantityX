@@ -15,8 +15,8 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            var mass = Mass.Parse("1 stone");
-            Console.WriteLine(mass.FormatAs("slug"));
+            var u = Velocity.Parse("2 knots");
+            Console.WriteLine(u.FormatAs("km/h"));
 
             //Console.WriteLine(pos.FormatAuto());
             //Console.WriteLine(pos.FormatAs(Distance.Meter));
