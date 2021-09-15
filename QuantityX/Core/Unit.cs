@@ -23,7 +23,7 @@ namespace QuantityX
         ICollection<string> GetUnitNames();
     }
 
-    public class Unit<T> : IUnit where T : IQuantity<T>
+    public class Unit<T> : IUnit where T : unmanaged, IQuantity<T>
     {
         public double Ratio { get; protected set; }
 

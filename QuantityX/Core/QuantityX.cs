@@ -22,19 +22,19 @@ namespace QuantityX
 
         // EXTENSION METHODS
 
-        public static double ConvertTo<T>(this T q, Unit<T> unit) where T : IQuantity<T>
+        public static double ConvertTo<T>(this T q, Unit<T> unit) where T : unmanaged, IQuantity<T>
         {
             return unit.ConvertTo(q);
         }
 
         public static string FormatAs<T>(this T q, Unit<T> unit, string formatNum = null,
-            bool longName = false, string overrideName = null) where T : IQuantity<T>
+            bool longName = false, string overrideName = null) where T : unmanaged, IQuantity<T>
         {
             return unit.FormatAs(q, formatNum, longName, overrideName);
         }
 
         public static string FormatAs<T>(this T q, string unitName, string formatNum = null,
-            bool longName = false) where T : IQuantity<T>
+            bool longName = false) where T : unmanaged, IQuantity<T>
         {
             // find the unit
             var unit = GetUnitByName<T>(unitName);
@@ -46,13 +46,13 @@ namespace QuantityX
         }
 
         public static string FormatAuto<T>(this T q, string formatNum, bool longName,
-            UnitGroup unitGroup, Unit<T> defaultUnit = null) where T : IQuantity<T>
+            UnitGroup unitGroup, Unit<T> defaultUnit = null) where T : unmanaged, IQuantity<T>
         {
             return FormatAuto(q, formatNum, longName, new List<UnitGroup> { unitGroup }, defaultUnit);
         }
 
         public static string FormatAuto<T>(this T q, string formatNum = null,
-            bool longName = false, List<UnitGroup> groups = null, Unit<T> defaultUnit = null) where T : IQuantity<T>
+            bool longName = false, List<UnitGroup> groups = null, Unit<T> defaultUnit = null) where T : unmanaged, IQuantity<T>
         {
             Unit<T> selectedUnit = null;
 
@@ -67,7 +67,7 @@ namespace QuantityX
         public static string FormatCompound<T>(this T q, ICollection<Unit<T>> units,
             string separator = " ",
             CompoundZeroHandling zeroHandling = CompoundZeroHandling.RemoveAny,
-            string lastNumberFormat = null, bool longNames = false, bool discardLastFraction = false) where T : IQuantity<T>
+            string lastNumberFormat = null, bool longNames = false, bool discardLastFraction = false) where T : unmanaged, IQuantity<T>
         {
             // compose info array
             var infolist = new List<CompoundFormatInfo<T>.Info>();
@@ -82,7 +82,7 @@ namespace QuantityX
         }
 
         public static string FormatCompound<T>(this T q,
-            CompoundFormatInfo<T> formatInfo) where T : IQuantity<T>
+            CompoundFormatInfo<T> formatInfo) where T : unmanaged, IQuantity<T>
         {
             var str = new StringBuilder();
 
@@ -160,7 +160,7 @@ namespace QuantityX
         }
 
         public static Unit<T> SelectBestUnit<T>(this T q, List<UnitGroup> groups)
-            where T : IQuantity<T>
+            where T : unmanaged, IQuantity<T>
         {
             // TODO - use a more efficient algorithm
 

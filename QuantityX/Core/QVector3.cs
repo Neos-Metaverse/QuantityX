@@ -5,7 +5,7 @@ using System.Text;
 
 namespace QuantityX
 {
-    public struct QVector3<T> where T : IQuantity<T>
+    public readonly struct QVector3<T> where T : unmanaged, IQuantity<T>
     {
         public readonly T x, y, z;
 

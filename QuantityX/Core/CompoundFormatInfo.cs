@@ -7,7 +7,7 @@ namespace QuantityX
 {
     public enum CompoundZeroHandling { LeaveAll, TrimBeginning, RemoveAny };
 
-    public class CompoundFormatInfo<T> where T : IQuantity<T>
+    public class CompoundFormatInfo<T> where T : unmanaged, IQuantity<T>
     {
         public string LastNumberFormat { get; private set; }
 

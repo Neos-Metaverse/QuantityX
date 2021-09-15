@@ -9,13 +9,15 @@ using System;
 
 namespace QuantityX
 {
-    public struct Ratio : IQuantity<Ratio>
+    public readonly struct Ratio : IQuantity<Ratio>
     {
         #region ESSENTIALS
 
         // this section can be simply left as is
 
-        public double BaseValue { get; private set; }
+        public readonly double BaseValue;
+
+        double IQuantity.BaseValue => BaseValue;
 
         public Ratio(double baseValue = 0) : this() { BaseValue = baseValue; }
 

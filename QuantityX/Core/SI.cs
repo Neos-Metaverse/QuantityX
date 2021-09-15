@@ -7,7 +7,7 @@
 
 namespace QuantityX
 {
-    public static class SI<T> where T : IQuantitySI<T>
+    public static class SI<T> where T : unmanaged, IQuantitySI<T>
     {
         public static readonly UnitSI<T> Yocto = new UnitSI<T>(-24, "y", "yocto");
         public static readonly UnitSI<T> Zepto = new UnitSI<T>(-21, "z", "zepto");

@@ -12,7 +12,7 @@ using System.Text;
 
 namespace QuantityX
 {
-    public class UnitNonLinear<T> : Unit<T> where T : IQuantity<T>
+    public class UnitNonLinear<T> : Unit<T> where T : unmanaged, IQuantity<T>
     {
         Func<double, double> convertToFunc;
         Func<double, double> convertFromFunc;

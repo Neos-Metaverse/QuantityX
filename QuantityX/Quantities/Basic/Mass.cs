@@ -9,14 +9,16 @@ using System;
 
 namespace QuantityX
 {
-    public struct Mass : IQuantitySI<Mass>
+    public readonly struct Mass : IQuantitySI<Mass>
     {
         #region ESSENTIALS
 
         // this section can be simply left as is, but rename Mass
 
         // Base unit is gram!!!
-        public double BaseValue { get; private set; }
+        public readonly double BaseValue;
+
+        double IQuantity.BaseValue => BaseValue;
 
         public Mass(double baseValue = 0) : this() { BaseValue = baseValue; }
 

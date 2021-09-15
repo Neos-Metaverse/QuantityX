@@ -9,13 +9,15 @@ using System;
 
 namespace QuantityX
 {
-    public struct Distance : IQuantitySI<Distance>
+    public readonly struct Distance : IQuantitySI<Distance>
     {
         #region ESSENTIALS
 
         // this section can be simply left as is
 
-        public double BaseValue { get; private set; }
+        public readonly double BaseValue;
+
+        double IQuantity.BaseValue => BaseValue;
 
         public Distance(double baseValue = 0) : this()  { BaseValue = baseValue; }
 

@@ -9,13 +9,15 @@ using System;
 
 namespace QuantityX
 {
-    public struct Current : IQuantitySI<Current>
+    public readonly struct Current : IQuantitySI<Current>
     {
         #region ESSENTIALS
 
         // this section can be simply left as is, but rename Current
 
-        public double BaseValue { get; private set; }
+        public readonly double BaseValue;
+
+        double IQuantity.BaseValue => BaseValue;
 
         public Current(double baseValue = 0) : this()  { BaseValue = baseValue; }
 

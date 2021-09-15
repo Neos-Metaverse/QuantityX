@@ -9,13 +9,15 @@ using System;
 
 namespace QuantityX
 {
-    public struct Acceleration : IQuantity<Acceleration>
+    public readonly struct Acceleration : IQuantity<Acceleration>
     {
         #region ESSENTIALS
 
         // this section can be simply left as is
 
-        public double BaseValue { get; private set; }
+        public readonly double BaseValue;
+
+        double IQuantity.BaseValue => BaseValue;
 
         public Acceleration(double baseValue = 0) : this() { BaseValue = baseValue; }
 

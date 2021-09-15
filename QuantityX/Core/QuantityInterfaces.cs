@@ -22,7 +22,7 @@ namespace QuantityX
     }
 
     public interface IQuantity<T> : IQuantity, IComparable<T>, IEquatable<T>
-        where T : IQuantity<T>
+        where T : unmanaged, IQuantity<T>
     {
         T New(double baseValue);
 
@@ -44,7 +44,7 @@ namespace QuantityX
         IUnit[] GetExludedSIUnits();
     }
 
-    public interface IQuantitySI<T> : IQuantitySI, IQuantity<T> where T : IQuantity<T>
+    public interface IQuantitySI<T> : IQuantitySI, IQuantity<T> where T : unmanaged, IQuantity<T>
     {
         
     }

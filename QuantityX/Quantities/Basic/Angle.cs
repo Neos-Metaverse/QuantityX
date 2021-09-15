@@ -9,15 +9,17 @@ using System;
 
 namespace QuantityX
 {
-    public struct Angle : IQuantitySI<Angle>
+    public readonly struct Angle : IQuantitySI<Angle>
     {
         #region ESSENTIALS
 
         // this section can be simply left as is, but rename Angle
 
-        public double BaseValue { get; private set; }
+        public readonly double BaseValue;
 
-		public Angle(double baseValue = 0) : this()  { BaseValue = baseValue; }
+        double IQuantity.BaseValue => BaseValue;
+
+        public Angle(double baseValue = 0) : this()  { BaseValue = baseValue; }
 
         public bool Equals(Angle other) { return BaseValue == other.BaseValue; }
         public int CompareTo(Angle other) { return BaseValue.CompareTo(other.BaseValue); }

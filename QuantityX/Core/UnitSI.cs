@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace QuantityX
 {
-    public class UnitSI<T> : Unit<T> where T : IQuantitySI<T>
+    public class UnitSI<T> : Unit<T> where T : unmanaged, IQuantitySI<T>
     {
         static UnitSI() { SIPower = default(T).SIPower; }
         static double SIPower;
