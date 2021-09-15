@@ -15,8 +15,8 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            var d = Distance.Parse("10 μm");
-            Console.WriteLine(d.ToString());
+            var mass = Mass.Parse("1 stone");
+            Console.WriteLine(mass.FormatAs("slug"));
 
             //Console.WriteLine(pos.FormatAuto());
             //Console.WriteLine(pos.FormatAs(Distance.Meter));
