@@ -15,8 +15,8 @@ namespace Testing
     {
         static void Main(string[] args)
         {
-            var u = Velocity.Parse("2 knots");
-            Console.WriteLine(u.FormatAs("km/h"));
+            var u = Distance.Parse("1 R☉");
+            Console.WriteLine(u.FormatAs("km"));
 
             //Console.WriteLine(pos.FormatAuto());
             //Console.WriteLine(pos.FormatAs(Distance.Meter));

@@ -80,6 +80,10 @@ namespace QuantityX
             new UnitGroup[] { UnitGroup.Molecular },
             new string[] { " Å" }, new string[] { " ångströms", " ångström" });
 
+        public static readonly Unit<Distance> SolarRadius = new Unit<Distance>(6.957e8,
+            new UnitGroup[] { UnitGroup.Astronomical },
+            new string[] { " R☉" }, new string[] { " Solar radii", " Solar radius", });
+
         public static readonly Unit<Distance> AU = new Unit<Distance>(149597871464,
             new UnitGroup[] { UnitGroup.Astronomical, UnitGroup.Common },
             new string[] { " AU" }, new string[] { " Astronomical Units", " Astronomical Unit", });
